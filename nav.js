@@ -52,7 +52,7 @@ faqItem.forEach(item => {
       answer.style.maxHeight = "300px";
       answer.style.marginTop = "12px";
       answer.style.opacity = "1";
-      item.style.backgroundColor = "#0a0a0a";
+      item.style.backgroundColor = "#141414";
     }
   });
 });
