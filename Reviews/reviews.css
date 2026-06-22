@@ -1,0 +1,55 @@
+.drop-rev{
+    display: flex;
+    border-bottom: 1px solid var(--borders);
+    padding: 40px;
+}
+#review-form{
+    width: 100%;
+}
+#review-form button{
+    width: 60%;
+}
+.oht{
+    background-color: #0a0a0a;
+}
+.cds{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 8px;
+    height: min-content;
+}
+.star-rating {
+    direction: rtl; /* Right-to-left for proper star order */
+    /* display: inline-flex; */
+    font-size: 1.3rem;
+    user-select: none;
+}
+
+.star-rating input {
+    display: none; /* Hide radio inputs */
+}
+.star-rating label {
+    color: #ffffff;
+    cursor: pointer;
+    transition: color .2s cubic-bezier(.44,0,.56,1) 0s;
+}
+
+
+/* Highlight on hover */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: var(--accent-color);
+}
+
+/* Highlight selected stars */
+.star-rating input:checked ~ label {
+    color: var(--accent-color);
+}
+
+@media (max-width:810px) {
+    .drop-rev{
+        padding: 20px;
+    }
+}

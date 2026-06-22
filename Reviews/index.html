@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target HEX | Reviews</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="reviews.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="container" id="nav">
+            <div class="nav-wrap">
+                <a href="/">
+                    <div class="logo-container">
+                        <img src="/images/logo.png">
+                        <p>Target HEX</p>
+                    </div>
+                </a>
+                <div class="nav-links-wrap">
+                    <a href="#services">
+                        Services
+                    </a>
+                    <a href="#pricing">
+                        Pricing
+                    </a>
+                    <a href="/Reviews/index.html">
+                        Reviews
+                    </a>
+                    <a href="#faq">
+                        FAQ
+                    </a>
+                    <a href="https://wa.me/13155722378">
+                        <button class="primary">Get Started</button>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 11.2497H3V12.7497H21V11.2497Z" fill="#0055ff"/>
+                        <path d="M21 6.49976H3V7.99976H21V6.49976Z" fill="#0055ff"/>
+                        <path d="M21 15.9998H3V17.4998H21V15.9998Z" fill="#0055ff"/>
+                    </svg> -->
+                    <img src="/icons/menu.svg" class="open-close-btn">
+                </div>
+            </div>
+            <div class="mobile-nav">
+                <div class="lay">
+                    <a href="/">
+                        <p>Home</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 11V21H11V15H13V21H21V11L12 2L3 11ZM12 4.12132L19.5 11.6213V19.5H14.5V13.5H9.5V19.5H4.5V11.6213L12 4.12132Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="/#video">
+                        <p>Watch video</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M23 12L5 22.4V1.59998L23 12ZM6.5 4.19901L20.0017 12L6.5 19.8009V4.19901Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="#services">
+                        <p>Services</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM14.6533 3.9223C17.8206 4.96205 20.1669 7.81282 20.4674 11.25H16.4875C16.3871 8.24126 15.6877 5.60305 14.6533 3.9223ZM16.4875 12.75C16.3871 15.7587 15.6877 18.397 14.6533 20.0777C17.8206 19.038 20.1669 16.1872 20.4674 12.75H16.4875ZM9.34674 3.9223C6.17936 4.96205 3.83313 7.81282 3.53263 11.25H7.51247C7.61286 8.24126 8.31232 5.60305 9.34674 3.9223ZM7.51247 12.75H3.53263C3.83313 16.1872 6.17936 19.038 9.34674 20.0777C8.31232 18.397 7.61286 15.7587 7.51247 12.75ZM10.1859 5.54448C9.54619 6.96606 9.09513 8.9629 9.01335 11.25H14.9867C14.9049 8.9629 14.4538 6.96606 13.8141 5.54448C13.042 3.82873 12.2847 3.5 12 3.5C11.7153 3.5 10.958 3.82873 10.1859 5.54448ZM14.9867 12.75H9.01335C9.09513 15.0371 9.54619 17.0339 10.1859 18.4555C10.958 20.1713 11.7153 20.5 12 20.5C12.2847 20.5 13.042 20.1713 13.8141 18.4555C14.4538 17.0339 14.9049 15.0371 14.9867 12.75Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="/Reviews/index.html">
+                        <p>Reviews</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7341 4.95282C19.6061 3.82677 18.0774 3.19433 16.4835 3.19434C14.8576 3.20205 13.2986 3.84224 12.1365 4.97934L12 5.10811L11.8635 4.97934C10.7014 3.84224 9.14237 3.20205 7.51651 3.19434C5.92265 3.19433 4.39392 3.82677 3.2659 4.95282C2.13789 6.07886 1.50278 7.60649 1.5 9.20035C1.5 12.4344 2.6865 13.9779 7.98901 18.1674L12 21.2806L16.011 18.1674C21.3135 13.9779 22.5 12.4344 22.5 9.20035C22.4972 7.60649 21.8621 6.07886 20.7341 4.95282ZM10.8144 6.05147L10.8242 6.06102L12 7.17035L13.1758 6.06102L13.1856 6.05147C14.0683 5.18775 15.2522 4.70112 16.487 4.69434C17.6823 4.69527 18.8284 5.16993 19.6744 6.0144C20.5209 6.8595 20.9977 8.00591 21 9.20207C20.9998 10.5692 20.7671 11.4351 20.0326 12.4409C19.2115 13.5652 17.7505 14.8811 15.0861 16.9865L12 19.3818L8.91389 16.9864C6.24947 14.8811 4.7885 13.5652 3.96744 12.4409C3.23286 11.435 3.00015 10.5691 3 9.20171C3.00242 8.00568 3.47915 6.85941 4.32564 6.0144C5.17158 5.16993 6.31775 4.69527 7.51296 4.69434C8.74783 4.70112 9.93174 5.18775 10.8144 6.05147Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="#faq">
+                        <p>FAQ</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 11.2498H6V12.7498H21V11.2498Z" fill="#0055ff"/>
+                                <path d="M4.5 11.2498H3V12.7498H4.5V11.2498Z" fill="#0055ff"/>
+                                <path d="M21 6.49976H6V7.99976H21V6.49976Z" fill="#0055ff"/>
+                                <path d="M4.5 6.49976H3V7.99976H4.5V6.49976Z" fill="#0055ff"/>
+                                <path d="M21 15.9998H6V17.4998H21V15.9998Z" fill="#0055ff"/>
+                                <path d="M4.5 15.9998H3V17.4998H4.5V15.9998Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="https://wa.me/13155722378">
+                    <button class="primary">Get Started</button>
+                </a>
+                
+            </div>
+        </div>
+        <div class="container" id="reviews">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>What our clients say</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Reviews</h2>
+                            <p>Your feedback helps us improve. Share your experience with our platform and help us continue delivering the service and support our users expect.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="drop-rev" >
+                    
+                    <form id="review-form" class="review-form" action="">
+                        <div class="side">
+                            <div class="field">
+                                <label for="name">What's your name</label>
+                                <input id="name" name="name" type="text">
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email">
+                            </div>
+                        </div>
+                        <div class="field cds">
+                            <label for="">Rating</label>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" required value="5"><label for="star5">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" required value="4"><label for="star4">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" required value="3"><label for="star3">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" required value="2"><label for="star2">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" required value="1"><label for="star1">&#9733;</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message"></textarea>
+                        </div>
+                        <button class="complete" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="drop-rev oht">
+                    <p>Recent reviews</p>
+                </div>
+                <div class="reviews-grid">
+                                        
+                </div>
+                
+            </div>
+        </div>
+        <div class="container" id="faq">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>FAQ</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Frequently asked Questions</h2>
+                            <p>Because finding the truth should be simple, secure, and clear.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Does the victim know about the hack?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Most cases begin showing initial findings within 24–72 hours, depending on the scope and tools deployed. We’ll keep you updated every step of the way.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                How can I get this service?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Reach out on the platform that works best for you—we’ll be sure to reply quickly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                How much do you charge?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Send a message via our social media handles to enquire about service cost.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Do you recover lost crypto?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Yes we offer Cryptocurrency recovery services</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                What are the payment methods?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>We provide users with an online payment merchant,We as well accept crypto payments via Bitcoins etc.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Do you provide proof of work?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>We do not supply sample data, name, contact, photo or screenshot as some users exploit those to target victims hereby staining the firm's image.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Is our conversation safe?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Currently, all of our conversations are encrypted with the SHA-256 algorithm, which means that no eavesdroppers can see or intercept any messages.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Will Target Hex complete my job with a 100% guarantee?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Average job completion rate is over 97%</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Can I pay Target HEX directly?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Yes. We will provide you with any available online payment merchant tag to pay through •PayPal• Zelle• Apple Pay, etc. You can’t make a direct payment to Target HEX's personal account cause hackers stay anonymous.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="footer">
+            <div class="wrap">
+                <div class="cta">
+                    <div>
+                        <h2>Take back control today.</h2>
+                        <p>Start your free trial and discover the truth discreetly, securely, and on your terms.</p>
+                    </div>
+                    <a href="https://wa.me/13155722378">
+                        <button class="primary">Contact us</button>
+                    </a>
+                </div>
+                <footer>
+                    <div class="footer-top">
+                        <div class="w-form">
+                            <a href="/">
+                                <div class="logo-container">
+                                    <img src="/images/logo.png">
+                                    <p>Target HEX</p>
+                                </div>
+                            </a>
+                            <form action="">
+                                <p>Fill out the form below and we will get back to you as soon as possible</p>
+                                <div class="side">
+                                    <div class="field">
+                                        <label for="first-name">First Name</label>
+                                        <input id="first-name" type="text" required>
+                                    </div>
+                                    <div class="field">
+                                        <label for="Last-name">Last Name</label>
+                                        <input id="last-name" type="text">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email">
+                                </div>
+                                <div class="field">
+                                    <label for="tel">Phone (optional)</label>
+                                    <input id="tel" type="tel">
+                                </div>
+                                <div class="field">
+                                    <label for="message">Message</label>
+                                    <textarea name="" id="message"></textarea>
+                                </div>
+                                <button class="complete" type="submit">Submit</button>
+                            </form>
+                        </div>
+                        <div class="w-links">
+                            <div>
+                                <p>Pages</p>
+                                <a href="#services">Services</a>
+                                <a href="/Reviews/index.html">Reviews</a>
+                                <a href="#pricing">Pricing</a>
+                                <a href="faq">FAQ</a>
+                            </div>
+                            <div>
+                                <p>Follow us</p>
+                                <a href="https://x.com/targethex">Twitter</a>
+                                <a href="https://www.facebook.com/share/1JjVktm4RK/?mibextid=wwXIfr">Facebook</a>
+                                <a href="https://wa.me/13155722378">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <span>© 2026 Target HEX. All rights reserved.</span>
+                        <div class="legal">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & conditions</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/nav.js"></script>
+    <script src="/launch-reviews.js"></script>
+    <script src="/nw-review-function.js"></script>
+</body>
+</html>

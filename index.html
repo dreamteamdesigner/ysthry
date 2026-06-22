@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target HEX | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "xoUmPPNZniGWBWRzQ",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_e06yh5m', 'template_sqh8s75', this)
+                    .then(() => {
+                        form.reset();
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <!-- <script>
+        const form = document.getElementById("contact-form");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            emailjs.sendForm(
+                "service_e06yh5m",
+                "template_sqh8s75",
+            this
+            )
+            .then(() => {
+                alert("Message sent successfully!");
+                form.reset();
+            })
+            .catch((error) => {
+                console.error(error);
+                alert("Failed to send message.");
+            });
+        });
+    </script> -->
+</head>
+<body>
+    <div class="page-container">
+        <div class="container" id="nav">
+            <div class="nav-wrap">
+                <a href="/">
+                    <div class="logo-container">
+                        <img src="/images/logo.png">
+                        <p>Target HEX</p>
+                    </div>
+                </a>
+                <div class="nav-links-wrap">
+                    <a href="#services">
+                        Services
+                    </a>
+                    <a href="#pricing">
+                        Pricing
+                    </a>
+                    <a href="/Reviews/index.html">
+                        Reviews
+                    </a>
+                    <a href="#faq">
+                        FAQ
+                    </a>
+                    <a href="https://wa.me/13155722378">
+                        <button class="primary">Get Started</button>
+                    </a>
+                </div>
+                <div class="menu-btn">
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 11.2497H3V12.7497H21V11.2497Z" fill="#0055ff"/>
+                        <path d="M21 6.49976H3V7.99976H21V6.49976Z" fill="#0055ff"/>
+                        <path d="M21 15.9998H3V17.4998H21V15.9998Z" fill="#0055ff"/>
+                    </svg> -->
+                    <img src="/icons/menu.svg" class="open-close-btn">
+                </div>
+            </div>
+            <div class="mobile-nav">
+                <div class="lay">
+                    <a href="/">
+                        <p>Home</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 11V21H11V15H13V21H21V11L12 2L3 11ZM12 4.12132L19.5 11.6213V19.5H14.5V13.5H9.5V19.5H4.5V11.6213L12 4.12132Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="#video">
+                        <p>Watch video</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M23 12L5 22.4V1.59998L23 12ZM6.5 4.19901L20.0017 12L6.5 19.8009V4.19901Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="#services">
+                        <p>Services</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM14.6533 3.9223C17.8206 4.96205 20.1669 7.81282 20.4674 11.25H16.4875C16.3871 8.24126 15.6877 5.60305 14.6533 3.9223ZM16.4875 12.75C16.3871 15.7587 15.6877 18.397 14.6533 20.0777C17.8206 19.038 20.1669 16.1872 20.4674 12.75H16.4875ZM9.34674 3.9223C6.17936 4.96205 3.83313 7.81282 3.53263 11.25H7.51247C7.61286 8.24126 8.31232 5.60305 9.34674 3.9223ZM7.51247 12.75H3.53263C3.83313 16.1872 6.17936 19.038 9.34674 20.0777C8.31232 18.397 7.61286 15.7587 7.51247 12.75ZM10.1859 5.54448C9.54619 6.96606 9.09513 8.9629 9.01335 11.25H14.9867C14.9049 8.9629 14.4538 6.96606 13.8141 5.54448C13.042 3.82873 12.2847 3.5 12 3.5C11.7153 3.5 10.958 3.82873 10.1859 5.54448ZM14.9867 12.75H9.01335C9.09513 15.0371 9.54619 17.0339 10.1859 18.4555C10.958 20.1713 11.7153 20.5 12 20.5C12.2847 20.5 13.042 20.1713 13.8141 18.4555C14.4538 17.0339 14.9049 15.0371 14.9867 12.75Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="/Reviews/index.html">
+                        <p>Reviews</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7341 4.95282C19.6061 3.82677 18.0774 3.19433 16.4835 3.19434C14.8576 3.20205 13.2986 3.84224 12.1365 4.97934L12 5.10811L11.8635 4.97934C10.7014 3.84224 9.14237 3.20205 7.51651 3.19434C5.92265 3.19433 4.39392 3.82677 3.2659 4.95282C2.13789 6.07886 1.50278 7.60649 1.5 9.20035C1.5 12.4344 2.6865 13.9779 7.98901 18.1674L12 21.2806L16.011 18.1674C21.3135 13.9779 22.5 12.4344 22.5 9.20035C22.4972 7.60649 21.8621 6.07886 20.7341 4.95282ZM10.8144 6.05147L10.8242 6.06102L12 7.17035L13.1758 6.06102L13.1856 6.05147C14.0683 5.18775 15.2522 4.70112 16.487 4.69434C17.6823 4.69527 18.8284 5.16993 19.6744 6.0144C20.5209 6.8595 20.9977 8.00591 21 9.20207C20.9998 10.5692 20.7671 11.4351 20.0326 12.4409C19.2115 13.5652 17.7505 14.8811 15.0861 16.9865L12 19.3818L8.91389 16.9864C6.24947 14.8811 4.7885 13.5652 3.96744 12.4409C3.23286 11.435 3.00015 10.5691 3 9.20171C3.00242 8.00568 3.47915 6.85941 4.32564 6.0144C5.17158 5.16993 6.31775 4.69527 7.51296 4.69434C8.74783 4.70112 9.93174 5.18775 10.8144 6.05147Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lay">
+                    <a href="#faq">
+                        <p>FAQ</p>
+                        <div class="menu-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 11.2498H6V12.7498H21V11.2498Z" fill="#0055ff"/>
+                                <path d="M4.5 11.2498H3V12.7498H4.5V11.2498Z" fill="#0055ff"/>
+                                <path d="M21 6.49976H6V7.99976H21V6.49976Z" fill="#0055ff"/>
+                                <path d="M4.5 6.49976H3V7.99976H4.5V6.49976Z" fill="#0055ff"/>
+                                <path d="M21 15.9998H6V17.4998H21V15.9998Z" fill="#0055ff"/>
+                                <path d="M4.5 15.9998H3V17.4998H4.5V15.9998Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <a href="https://wa.me/13155722378">
+                    <button class="primary">Get Started</button>
+                </a>
+                
+            </div>
+        </div>
+        <div class="container" id="header">
+            <div class="wrap header-wrap">
+                <div class="top-header">
+                    <div class="framer-1mfv3g0">
+                        <div class="framer-ygkh6z" data-framer-name="Pattern">
+                            <div class="el" data-framer-background-image-wrapper="true" style="position: absolute; border-radius: inherit; background: radial-gradient(43% 85% at 50% 0, #0055ff4d 0%, #000 100%); corner-shape: inherit; inset: 0px; background-image: url(&quot;https://framerusercontent.com/images/5AXsK3MyGYovv57LsfY0T3kRQU.png?width=79&amp;height=79&quot;); background-repeat: repeat; background-position: left top; border: 0px; opacity: 0.05;z-index: 0; pointer-events: none; background-size: 60px; "></div>
+                        </div>
+                    </div>
+
+                    <div class="header-text-wrap">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>          
+                            <span>Catch a cheating partner</span>
+                        </div>
+
+                        <div class="title-sub">
+                            <h1>The end of doubt starts here—with truth you can’t ignore.</h1>
+                            <p>Lies are clever. But data is smarter. Our platform cuts through the excuses and reveals what’s really happening behind closed screens.</p>
+                        </div>
+
+
+                        <div class="header-buttons">
+                            <a href="https://wa.me/13155722378">
+                                <button class="primary">Get started</button>
+                            </a>
+                            <a href="#video">
+                                <button class="secondary"  class="video-button">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23 12L5 22.4V1.59998L23 12ZM6.5 4.19901L20.0017 12L6.5 19.8009V4.19901Z" fill="#fff"/>
+                                    </svg>
+                                    Watch video
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="bottom-header">
+                    <div class="left-hook">
+                        <p>Trusted by top innovative teams</p>
+                    </div>
+                    <div class="right-hook">
+
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <div class="container" id="about">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>About TargetHex</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>We are Target HEX</h2>
+                            <p>At Target HEX, we make it easy to find the truth. With smart, secure tools, we turn confusing data into clear answers you can trust.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="video-wrap" id="video">
+                    <div class="framer-1mfv3g0">
+                        <div class="framer-ygkh6z" data-framer-name="Pattern">
+                            <div class="el" data-framer-background-image-wrapper="true" style="position: absolute; border-radius: inherit; corner-shape: inherit; inset: 0px; background-image: url(&quot;https://framerusercontent.com/images/5AXsK3MyGYovv57LsfY0T3kRQU.png?width=79&amp;height=79&quot;); background-repeat: repeat; background-position: left top; border: 0px; opacity: 0.1;z-index: 0; pointer-events: none; background-size: 40px; "></div>
+                        </div>
+                    </div>
+                    <video src="/video/comp vid.mp4" autoplay controls poster="https://framerusercontent.com/images/H0MMmhZxy7CG1pb2GkOcjQtBxfQ.jpeg?width=2880&height=1612" playsinline></video>
+                </div>
+                <div class="numbers-wrap">
+                    <div>
+                        <h2>99%</h2>
+                        <p>Detection accuracy</p>
+                    </div>
+                    <div>
+                        <h2>2.3M+</h2>
+                        <p>Proof delivered</p>
+                    </div>
+                    <div>
+                        <h2>100+</h2>
+                        <p>Countries covered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="why-choose-us">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>Why We Stand Out</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Why choose Target HEX</h2>
+                            <p>Finding the truth should be simple, secure, and clear.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="why-choose">
+                    <div class="reasons">
+                        <div class="reason active">
+                            <h3>Evidence Over Assumptions</h3>
+                            <p>Every signal is data-driven—no guesswork, no speculation.</p>
+                        </div>
+                        <div class="reason">
+                            <h3>100% Confidentiality</h3>
+                            <p>Runs silently in the background, leaving no digital trace.</p>
+                        </div>
+                        <div class="reason">
+                            <h3>Simplified Insights</h3>
+                            <p>Complex data distilled into simple, actionable insights.</p>
+                        </div>
+                        <div class="reason">
+                            <h3>Security at the Core</h3>
+                            <p>End-to-end encryption keeps your privacy uncompromised.</p>
+                        </div>
+                    </div>
+                    <div class="images-why">
+                        <img src="/images/img04.jpg"  class="featured-image active" alt="">
+                        <img src="/images/img03.jpg" class="featured-image" alt="">
+                        <img src="/images/img02.jpg" class="featured-image" alt="">
+                        <img src="/images/img01.jpg" class="featured-image" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="services">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>Why We Stand Out</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Why choose Target HEX</h2>
+                            <p>Finding the truth should be simple, secure, and clear.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="services-grid">
+                    <div class="service">
+                        <div class="serve-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 17.75C13 18.3023 12.5523 18.75 12 18.75C11.4477 18.75 11 18.3023 11 17.75C11 17.1977 11.4477 16.75 12 16.75C12.5523 16.75 13 17.1977 13 17.75Z" fill="#0055ff"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 2H18.5V22H5.5V2ZM7 3.5H17V20.5H7V3.5Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                        <div class="serve-info">
+                            <h3>Phone Hacking Service</h3>
+                            <p>We provide ethical hacking, grade edits, and security testing with full discretion.</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="serve-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_27_1514)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 18L1.36191 13.2333C0.498806 12.0055 0 10.5545 0 9C0 4.58172 4.02944 1 9.00001 1C13.9706 1 18 4.58172 18 9C18 13.39 14.0221 16.9541 9.09549 16.9996C9.06613 16.9998 9.03672 17 9.00729 17C9.00487 17 9.00244 17 9.00001 17C8.3957 17 7.8053 16.9471 7.23435 16.8461C6.66341 16.7452 6.11193 16.5962 5.58546 16.4042L0 18ZM3.00097 12.9567L2.18404 15.816L5.64181 14.828L6.09948 14.995C6.98794 15.3191 7.96697 15.5 9.00001 15.5C13.3131 15.5 16.5 12.4286 16.5 9C16.5 5.57136 13.3131 2.5 9.00001 2.5C4.6869 2.5 1.5 5.57136 1.5 9C1.5 10.2251 1.89127 11.378 2.58906 12.3707L3.00097 12.9567Z" fill="#0055ff"/>
+                                    <path d="M18.89 5.78381C19.1357 6.40533 19.3122 7.05966 19.4103 7.7405C21.3142 8.95004 22.5 10.9085 22.5 13C22.5 14.2251 22.1088 15.378 21.411 16.3707L20.9991 16.9567L21.816 19.816L18.3582 18.828L17.9006 18.995C17.0121 19.3191 16.0331 19.5 15 19.5C13.3959 19.5 11.9476 19.0752 10.761 18.3651C10.1858 18.4539 9.59717 18.5 9.00002 18.5C8.81587 18.5 8.63274 18.4957 8.45074 18.4872C10.0919 20.0343 12.4191 21 15 21C16.2087 21 17.3616 20.7882 18.4146 20.4042L24 22L22.6381 17.2333C23.5012 16.0055 24 14.5545 24 13C24 9.8202 21.913 7.0737 18.89 5.78381Z" fill="#0055ff"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_27_1514">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="serve-info">
+                            <h3>Social media Hack</h3>
+                            <p>Track hidden chats, secret accounts, and suspicious activity across major platforms.</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="serve-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 17.75C13 18.3023 12.5523 18.75 12 18.75C11.4477 18.75 11 18.3023 11 17.75C11 17.1977 11.4477 16.75 12 16.75C12.5523 16.75 13 17.1977 13 17.75Z" fill="#0055ff"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 2H18.5V22H5.5V2ZM7 3.5H17V20.5H7V3.5Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                        <div class="serve-info">
+                            <h3>Smartphone cloning</h3>
+                            <p>We provide ethical hacking, grade edits, and security testing with full discretion.</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="serve-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.7341 4.95282C19.6061 3.82677 18.0774 3.19433 16.4835 3.19434C14.8576 3.20205 13.2986 3.84224 12.1365 4.97934L12 5.10811L11.8635 4.97934C10.7014 3.84224 9.14237 3.20205 7.51651 3.19434C5.92265 3.19433 4.39392 3.82677 3.2659 4.95282C2.13789 6.07886 1.50278 7.60649 1.5 9.20035C1.5 12.4344 2.6865 13.9779 7.98901 18.1674L12 21.2806L16.011 18.1674C21.3135 13.9779 22.5 12.4344 22.5 9.20035C22.4972 7.60649 21.8621 6.07886 20.7341 4.95282ZM10.8144 6.05147L10.8242 6.06102L12 7.17035L13.1758 6.06102L13.1856 6.05147C14.0683 5.18775 15.2522 4.70112 16.487 4.69434C17.6823 4.69527 18.8284 5.16993 19.6744 6.0144C20.5209 6.8595 20.9977 8.00591 21 9.20207C20.9998 10.5692 20.7671 11.4351 20.0326 12.4409C19.2115 13.5652 17.7505 14.8811 15.0861 16.9865L12 19.3818L8.91389 16.9864C6.24947 14.8811 4.7885 13.5652 3.96744 12.4409C3.23286 11.435 3.00015 10.5691 3 9.20171C3.00242 8.00568 3.47915 6.85941 4.32564 6.0144C5.17158 5.16993 6.31775 4.69527 7.51296 4.69434C8.74783 4.70112 9.93174 5.18775 10.8144 6.05147Z" fill="#0055ff"/>
+                            </svg>
+
+                        </div>
+                        <div class="serve-info">
+                            <h3>Relationship Therapy</h3>
+                            <p>Private, professional help to rebuild trust and heal from digital betrayal.</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div class="serve-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.5 14C18.5 14.6904 17.9404 15.25 17.25 15.25C16.5596 15.25 16 14.6904 16 14C16 13.3096 16.5596 12.75 17.25 12.75C17.9404 12.75 18.5 13.3096 18.5 14Z" fill="#0055ff"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.75 3C3.23122 3 2 4.23122 2 5.75V21H22V7H20V3H4.75ZM3.5 5.75C3.5 6.44036 4.05964 7 4.75 7H18.5V4.5H4.75C4.05964 4.5 3.5 5.05964 3.5 5.75ZM3.5 8.20015C3.87503 8.39186 4.29989 8.5 4.75 8.5H20.5V19.5H3.5V8.20015Z" fill="#0055ff"/>
+                            </svg>
+                        </div>
+                        <div class="serve-info">
+                            <h3>Crypto Recovery</h3>
+                            <p>We provide ethical hacking, grade edits, and security testing with full discretion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="pricing">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>Pricing</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Choose a plan that fits your apps and scales with your needs.</h2>
+                            <p>Forge supports teams of all sizes with flexible, scalable pricing.</p>
+                        </div>
+                        <a href="https://wa.me/13155722378">
+                            <button class="secondary">Learn more</button>
+                        </a>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="price-options">
+                    <div class="option">
+                        <div>
+                            <p>Starter</p>
+                            <h2>$250</h2>
+                        </div>
+                        <div>
+                            <p>For individuals seeking clarity.</p>
+                            <div class="features">
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Core monitoring features</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Secure data insights</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Private dashboard access</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Email support</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/13155722378">
+                                <button class="secondary">Subscribe</button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="option featured-plan">
+                        <div>
+                            <p>Pro</p>
+                            <h2>$450</h2>
+                        </div>
+                        <div>
+                            <p>For individuals seeking clarity.</p>
+                            <div class="features">
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>All Starter features</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Advanced detection tools</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Multi-device monitoring</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Priority support</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/13155722378">
+                                <button class="primary">Subscribe</button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="option">
+                        <div>
+                            <p>Enterprises</p>
+                            <h2>$730</h2>
+                        </div>
+                        <div>
+                            <p>For individuals seeking clarity.</p>
+                            <div class="features">
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Full feature suite</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Unlimited device coverage</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Custom reporting & analytics</span>
+                                </div>
+                                <div>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.0303 9.03033L15.9697 7.96967L11 12.9393L8.53033 10.4697L7.46967 11.5303L11 15.0607L17.0303 9.03033Z" fill="#0055ff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5L12 1L21 5V13C21 20 12 23 12 23C12 23 3 20 3 13V5ZM12 21.3972C12.2062 21.3141 12.4704 21.2022 12.7761 21.0607C13.56 20.6977 14.5957 20.15 15.6218 19.409C17.7145 17.8975 19.5 15.789 19.5 13V5.97481L12 2.64148L4.5 5.97481V13C4.5 15.789 6.28546 17.8975 8.37824 19.409C9.40427 20.15 10.44 20.6977 11.2239 21.0607C11.5296 21.2022 11.7938 21.3141 12 21.3972Z" fill="#0055ff"/>
+                                    </svg>
+                                    <span>Dedicated account manager</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/13155722378">
+                                <button class="secondary">Subscribe</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="reviews">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>What our clients say</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Reviews</h2>
+                            <p>Because finding the truth should be simple, secure, and clear.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="reviews-grid">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container" id="faq">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="section-title-sub">
+                        <div class="tag">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_31_5843)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 24V14H3.5L14.5 0V10H20.5L9.5 24ZM17.4138 11.5L11 19.663V12.5H6.5862L13 4.33698V11.5H17.4138Z"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_31_5843">
+                                        <rect width="24" height="24" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span>FAQ</span>
+                        </div>
+                        <div class="title-sub-two">
+                            <h2>Frequently asked Questions</h2>
+                            <p>Because finding the truth should be simple, secure, and clear.</p>
+                        </div>
+                    </div>
+                    <div class="box">
+
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Does the victim know about the hack?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Most cases begin showing initial findings within 24–72 hours, depending on the scope and tools deployed. We’ll keep you updated every step of the way.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                How can I get this service?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Reach out on the platform that works best for you—we’ll be sure to reply quickly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                How much do you charge?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Send a message via our social media handles to enquire about service cost.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Do you recover lost crypto?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Yes we offer Cryptocurrency recovery services</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                What are the payment methods?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>We provide users with an online payment merchant,We as well accept crypto payments via Bitcoins etc.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Do you provide proof of work?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>We do not supply sample data, name, contact, photo or screenshot as some users exploit those to target victims hereby staining the firm's image.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Is our conversation safe?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Currently, all of our conversations are encrypted with the SHA-256 algorithm, which means that no eavesdroppers can see or intercept any messages.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Will Target Hex complete my job with a 100% guarantee?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Average job completion rate is over 97%</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="topper">
+                            <p class="question">
+                                Can I pay Target HEX directly?
+                            </p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.2519 2.99988V11.2498H3.00195V12.7498H11.2519V20.9999H12.7519V12.7498H21.0019V11.2498H12.7519V2.99988H11.2519Z" fill="#fff"/>
+                            </svg>
+                        </div>
+                        <div class="answer">
+                            <p>Yes. We will provide you with any available online payment merchant tag to pay through •PayPal• Zelle• Apple Pay, etc. You can’t make a direct payment to Target HEX's personal account cause hackers stay anonymous.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="footer">
+            <div class="wrap">
+                <div class="cta">
+                    <div>
+                        <h2>Take back control today.</h2>
+                        <p>Start your free trial and discover the truth discreetly, securely, and on your terms.</p>
+                    </div>
+                    <a href="https://wa.me/13155722378">
+                        <button class="primary">Contact us</button>
+                    </a>
+                </div>
+                <footer>
+                    <div class="footer-top">
+                        <div class="w-form" >
+                            <a href="/">
+                                <div class="logo-container">
+                                    <img src="/images/logo.png">
+                                    <p>Target HEX</p>
+                                </div>
+                            </a>
+                            <form id="contact-form">
+                                <p>Fill out the form below and we will get back to you as soon as possible</p>
+                                
+                                <div class="field">
+                                    <label for="name">What's your name</label>
+                                    <input id="name" name="name type="text">
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email</label>
+                                    <input id="email" name="Email" type="email">
+                                </div>
+                                <div class="field">
+                                    <label for="tel">Phone (optional)</label>
+                                    <input id="tel" name="Email" type="tel">
+                                </div>
+                                <div class="field">
+                                    <label for="message">Message</label>
+                                    <textarea name="Message" id="message"></textarea>
+                                </div>
+                                <button class="complete" type="submit">Submit</button>
+                            </form>
+                        </div>
+                        <div class="w-links">
+                            <div>
+                                <p>Pages</p>
+                                <a href="#services">Services</a>
+                                <a href="/Reviews/index.html">Reviews</a>
+                                <a href="#pricing">Pricing</a>
+                                <a href="faq">FAQ</a>
+                            </div>
+                            <div>
+                                <p>Follow us</p>
+                                <a href="https://x.com/targethex">Twitter</a>
+                                <a href="https://www.facebook.com/share/1JjVktm4RK/?mibextid=wwXIfr">Facebook</a>
+                                <a href="https://wa.me/13155722378">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <span>© 2026 Target HEX. All rights reserved.</span>
+                        <div class="legal">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & conditions</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="nav.js"></script>
+    <script>
+        const reviewsContainer = document.querySelector(".reviews-grid");
+
+        const paintStars = (rating) => {
+            const full = '★'.repeat(rating);
+            const empty = '★'
+                .repeat(5 - rating)
+                .split('')
+                .map(s => `<span style="color:#0055ff52">${s}</span>`)
+                .join('');
+
+            return full + empty;
+        };
+
+       
+
+        fetch("/reviews.json")
+        .then(res => res.json())
+        .then(reviews => {
+
+            const recentReviews = reviews
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 6);
+
+            renderHomepageReviews(recentReviews);
+
+        });
+
+        function renderHomepageReviews(reviews) {
+
+            reviewsContainer.innerHTML = "";
+
+            reviews.forEach(review => {
+
+                const formattedDate = new Date(review.date)
+                .toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric"
+                });
+
+                const maskedEmail = maskEmail(review.email);
+
+
+                const reviewCard = document.createElement("div");
+
+                reviewCard.classList.add("review");
+
+                reviewCard.innerHTML = `
+                    <div class="fio">
+                        <span aria-label="Rating: 2 stars" style=" letter-spacing: 3px ;font-size: 17px; color: #0055ff;">
+                            ${paintStars(review.rating)}
+                        </span>
+                        <p>${review.message}</p>
+                    </div>
+
+                    <div class="rev-top">
+                        <div class="dp">
+                            ${review.name[0].toUpperCase()}
+                        </div>
+                        <div class="sider">
+                            <span style="font-size: 15px;">${review.name}</span>  
+                            <div class="st-dt">
+                                <span>${maskedEmail}</span>
+                                <div class="spacer">
+                                    
+                                </div>    
+                                <div class="date">
+                                    <span>${formattedDate}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                reviewsContainer.appendChild(reviewCard);
+
+            });
+
+        }
+
+        function maskEmail(email) {
+            if (!email) return "";
+
+            const [username, domain] = email.split("@");
+
+            return `${username.slice(0, 1)}******${username.slice(-1)}@${domain}`;
+        }
+    </script>
+    <script>
+        const items = document.querySelectorAll(".reason");
+        const images = document.querySelectorAll(".featured-image");
+        
+        items.forEach((item, index) => {
+
+            item.addEventListener('click', () => {
+
+                images.forEach(img => {
+                    img.classList.remove('active');
+                });
+
+                images[index].classList.add('active');
+
+                items.forEach(item => item.classList.remove('active'));
+                item.classList.add('active');
+
+            });
+
+        });
+    </script>
+    
+</body>
+</html>
