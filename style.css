@@ -9,7 +9,7 @@
 }
 :root{
     --accent-color: #0055ff;
-    --borders: hsla(0, 0%, 100%, 0.2);
+    --borders: hsla(0, 0%, 100%, 0.14);
     --secondary-text: hsla(0, 0%, 100%, 0.7);
 }
 
